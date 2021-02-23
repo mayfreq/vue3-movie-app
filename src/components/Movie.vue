@@ -2,7 +2,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Card",
+  name: "Movie",
 });
 </script>
 
@@ -32,7 +32,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card {
   width: 220px;
   height: 320px;

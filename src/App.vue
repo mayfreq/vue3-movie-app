@@ -2,13 +2,13 @@
 import { defineComponent } from "vue";
 
 import Header from "./components/Header.vue";
-import Card from "./components/Card.vue";
+import MovieList from "./components/MovieList.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    Card,
     Header,
+    MovieList,
   },
 });
 </script>
@@ -16,15 +16,11 @@ export default defineComponent({
 <template>
   <Header />
   <div class="container">
-    <Card v-for="index in 19" :key="index" />
+    <MovieList />
   </div>
 </template>
 
 <style lang="scss">
-$width: 200px;
-$height: 300px;
-$content-height: 100%;
-
 * {
   margin: 0;
   padding: 0;
@@ -36,31 +32,27 @@ body {
 }
 
 .container {
-  background-color: aquamarine;
+  background-color: rgb(231, 235, 240);
   padding: 15px 40px 15px 40px;
   display: flex;
   flex-flow: row wrap;
-  min-width: 740px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1180px;
-}
-.container:after {
-  content: "";
-  flex: 10 0 auto;
+  min-width: 740px;
 }
 
-@media screen and (min-width: 740px) and (max-width: 960px) {
+@media screen and (min-width: 740px) {
   .container {
     width: 740px;
   }
 }
-@media screen and (min-width: 960px) and (max-width: 1180px) {
+@media screen and (min-width: 960px) {
   .container {
     width: 960px;
   }
 }
-@media screen and (min-width: 1180) {
+@media screen and (min-width: 1180px) {
   .container {
     width: 1180px;
   }
