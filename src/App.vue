@@ -21,6 +21,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
+$height: 100%;
 * {
   margin: 0;
   padding: 0;

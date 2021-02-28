@@ -3,28 +3,30 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Movie",
+  props: {
+    movie: null,
+  },
 });
 </script>
-
 <template>
   <div class="card">
     <div class="card-content">
       <div class="card-movie-header">
-        <img src="../assets/movie.jpg" alt="" />
+        <img :src="movie.posterUrl" alt="" />
       </div>
       <div class="card-movie-content">
         <div class="card-movie-content-head">
-          <span>The Lego Movie</span>
-          <span>1/10</span>
+          <span>{{ movie.title }}</span>
+          <span>{{ movie.imdbRating }}/10</span>
         </div>
         <div class="card-movie-info">
           <div class="movie-released">
             <span>released</span>
-            <span>07 Feb 2014</span>
+            <span>{{ movie.released }}</span>
           </div>
           <div class="movie-runtime">
             <span>runtime</span>
-            <span>100 min</span>
+            <span>{{ movie.runtime }}</span>
           </div>
         </div>
       </div>
