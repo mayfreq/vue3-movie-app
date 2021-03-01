@@ -1,7 +1,16 @@
 import json from "@/data/movieList.json";
 
+export interface Movie {
+  imdbId: string;
+  title: string;
+  posterUrl: string;
+  released: string;
+  imdbRating: string;
+  runtime: string;
+}
+
 export const getMovie = async () => {
-  const movieList = [];
+  const movieList = [] as Movie[];
   let sayac = 0;
 
   for (const file of json) {
@@ -28,6 +37,5 @@ export const getMovie = async () => {
     if (sayac === 10) break;
     else sayac++;
   }
-  console.log(movieList);
   return movieList;
 };

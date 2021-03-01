@@ -1,8 +1,23 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import { useStore } from "vuex";
 
 export default defineComponent({
   name: "Header",
+  setup() {
+    const store = useStore();
+    const searchText = ref("");
+
+    const search = (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        store.dispatch("changeSearchText", searchText.value);
+      }
+    };
+    return {
+      search,
+      searchText,
+    };
+  },
 });
 </script>
 
@@ -10,7 +25,13 @@ export default defineComponent({
   <div class="header">
     <img src="../assets/logo.png" alt="Movie App " />
     <span>Ana Sayfa</span>
-    <input type="text" placeholder="Search" />
+    <input
+      id="search"
+      type="text"
+      v-model="searchText"
+      placeholder="Search"
+      @keyup="search($event)"
+    />
   </div>
 </template>
 

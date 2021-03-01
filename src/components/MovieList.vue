@@ -1,5 +1,6 @@
 <script lang="ts">
-import { defineComponent, onMounted, reactive, ref } from "vue";
+import { computed, defineComponent, onMounted, ref } from "vue";
+import { useStore } from "vuex";
 import Movie from "@/components/Movie.vue";
 import { getMovie } from "@/utils/getData";
 
@@ -9,8 +10,11 @@ export default defineComponent({
     Movie,
   },
   setup() {
-    const movieList = reactive({ value: [] as any[] });
+    const store = useStore();
     let result: any[] = [];
+
+    const movieList = computed(() => store.getters.get);
+
     const style = ref("display:none;");
 
     onMounted(async () => {
@@ -23,7 +27,7 @@ export default defineComponent({
       }
 
       for (const movie of result) {
-        movieList.value.push(movie);
+        await store.dispatch("addMovie", movie);
       }
       style.value = "display:none";
     });
@@ -38,7 +42,7 @@ export default defineComponent({
 
 <template>
   <h1 :style="style">Loading...</h1>
-  <Movie v-for="movie in movieList.value" :key="movie.imdbId" :movie="movie" />
+  <Movie v-for="movie in movieList" :key="movie.imdbId" :movie="movie" />
 </template>
 
 <style lang="scss" scoped></style>

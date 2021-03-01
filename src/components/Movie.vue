@@ -4,7 +4,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Movie",
   props: {
-    movie: null,
+    movie: Object, //alternative Object as () => Movie,
   },
 });
 </script>
@@ -12,21 +12,21 @@ export default defineComponent({
   <div class="card">
     <div class="card-content">
       <div class="card-movie-header">
-        <img :src="movie.posterUrl" alt="" />
+        <img :src="movie?.posterUrl" alt="" />
       </div>
       <div class="card-movie-content">
         <div class="card-movie-content-head">
-          <span>{{ movie.title }}</span>
-          <span>{{ movie.imdbRating }}/10</span>
+          <span>{{ movie?.title }}</span>
+          <span>{{ movie?.imdbRating }}/10</span>
         </div>
         <div class="card-movie-info">
           <div class="movie-released">
             <span>released</span>
-            <span>{{ movie.released }}</span>
+            <span>{{ movie?.released }}</span>
           </div>
           <div class="movie-runtime">
             <span>runtime</span>
-            <span>{{ movie.runtime }}</span>
+            <span>{{ movie?.runtime }}</span>
           </div>
         </div>
       </div>
