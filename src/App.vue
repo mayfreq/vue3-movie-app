@@ -40,22 +40,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 1180px;
-  min-width: 740px;
-}
-
-@media screen and (min-width: 740px) {
-  .container {
-    width: 740px;
-  }
-}
-@media screen and (min-width: 960px) {
-  .container {
-    width: 960px;
-  }
-}
-@media screen and (min-width: 1180px) {
-  .container {
-    width: 1180px;
-  }
+  min-width: 840px;
 }
 </style>

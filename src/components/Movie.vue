@@ -36,8 +36,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card {
-  width: 220px;
-  height: 320px;
+  flex: 0 0 33%;
+  height: 380px;
   padding: 10px;
 }
 .card-content {
@@ -53,19 +53,19 @@ export default defineComponent({
 }
 
 .card-movie-header {
-  width: 200px;
-  height: 230px;
+  width: 100%;
+  height: 280px;
 }
 .card-movie-header > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 .card-movie-content {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  height: 50px;
+  height: 80px;
 }
 .card-movie-content-head {
   display: flex;

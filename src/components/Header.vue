@@ -62,20 +62,4 @@ export default defineComponent({
   align-self: center;
   margin-right: 15px;
 }
-
-@media screen and (min-width: 740px) {
-  .header {
-    width: 740px;
-  }
-}
-@media screen and (min-width: 960px) {
-  .header {
-    width: 960px;
-  }
-}
-@media screen and (min-width: 1180px) {
-  .header {
-    width: 1180px;
-  }
-}
 </style>
