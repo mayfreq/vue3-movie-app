@@ -14,7 +14,7 @@ export const getMovie = async () => {
   let sayac = 0;
 
   for (const file of json) {
-    const url = "http://www.omdbapi.com/?apikey=apikey&i=" + file.id;
+    const url = "http://www.omdbapi.com/?apikey=54b292b8&i=" + file.id;
 
     const response = await fetch(url, { method: "GET" });
 
