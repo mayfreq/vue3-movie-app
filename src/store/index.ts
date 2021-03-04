@@ -1,9 +1,9 @@
 import { createStore } from "vuex";
-import { Movie } from "@/utils/getData";
+import { TMovie } from "@/utils/getData";
 
 export default createStore({
   state: {
-    movieList: [] as Movie[],
+    movieList: [] as TMovie[],
     searchText: "",
   },
   getters: {
